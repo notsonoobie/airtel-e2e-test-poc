@@ -56,16 +56,17 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        // browserName: 'chrome',
+        browserName: 'chrome',
         acceptInsecureCerts: true,
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
-        platformName: "iOS",
-        platformVersion: "14.5",
-        deviceName: "iPhone 12 Pro Max",
-        appium: { connectHardwareKeyboard: true }
+
+        // platformName: "iOS",
+        // platformVersion: "14.5",
+        // deviceName: "iPhone 12 Pro Max",
+        // appium: { connectHardwareKeyboard: true }
     }],
     //
     // ===================
@@ -189,8 +190,9 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: function (capabilities, specs) {
+        browser.setWindowSize(400, 820);
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
