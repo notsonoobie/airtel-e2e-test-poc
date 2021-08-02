@@ -14,6 +14,5 @@
 
   Change Base URL from `wdio.conf.js`
 
-  ```bash
-    baseUrl: 'http://localhost:3000'
-  ```
+      baseUrl: 'http://localhost:3000'
+```
